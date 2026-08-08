@@ -1544,6 +1544,47 @@ textarea:focus-visible {
   .portal-dash-head { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 
+/* ── SPONSORS HERO + NAMING SPONSOR (fills the blank top-right) ── */
+.sponsors-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-bottom: 52px;
+}
+.sponsors-hero-text .body-text { max-width: 540px; margin-top: 12px; }
+.sponsors-hero-text h2 { margin: 10px 0 12px; }
+
+.naming-sponsor-card {
+  background: var(--white);
+  border: 1.5px solid var(--amber);
+  border-radius: var(--radius-lg);
+  padding: 28px 28px 24px;
+  box-shadow: 0 14px 32px rgba(44,33,24,0.06);
+}
+.naming-sponsor-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber-dark);
+  margin-bottom: 14px;
+}
+.naming-sponsor-logo {
+  background: var(--base-deep);
+  border-radius: var(--radius-md);
+  height: 220px;
+  color: var(--ink-soft);
+  overflow: hidden;
+}
+.naming-sponsor-note {
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 12px;
+  text-align: center;
+}
+
 /* ── SPONSOR TIERS + COMMUNITY PARTNERS (sponsors.html additions) ── */
 .sponsor-tier-group { margin-bottom: 40px; }
 .sponsor-tier-group .sponsor-grid { margin-bottom: 0; }
@@ -1600,9 +1641,13 @@ textarea:focus-visible {
 
 @media (max-width: 1080px) {
   .sponsor-grid-partners { grid-template-columns: repeat(2, 1fr); }
+  .sponsors-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .naming-sponsor-logo { height: 180px; }
 }
 @media (max-width: 720px) {
   .sponsor-grid-lg { grid-template-columns: 1fr; max-width: none; }
   .sponsor-grid-partners { grid-template-columns: 1fr; }
   .community-partners { padding: 28px 22px; }
+  .naming-sponsor-card { padding: 22px 20px 18px; }
+  .naming-sponsor-logo { height: 160px; }
 }
