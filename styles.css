@@ -1543,3 +1543,66 @@ textarea:focus-visible {
   .portal-card { padding: 28px 22px; }
   .portal-dash-head { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
+
+/* ── SPONSOR TIERS + COMMUNITY PARTNERS (sponsors.html additions) ── */
+.sponsor-tier-group { margin-bottom: 40px; }
+.sponsor-tier-group .sponsor-grid { margin-bottom: 0; }
+.sponsor-tier-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber-dark);
+  margin-bottom: 14px;
+}
+.sponsor-grid-lg { grid-template-columns: repeat(2, 1fr); max-width: 520px; }
+.sponsor-grid-lg .sponsor-logo { height: 110px; font-size: 15px; }
+.sponsor-grid-partners { grid-template-columns: repeat(3, 1fr); margin-top: 20px; margin-bottom: 0; max-width: 720px; }
+.sponsor-confirm { display: block; font-size: 9px; font-weight: 500; letter-spacing: 0.02em; text-transform: none; color: var(--ink-soft); margin-top: 3px; }
+
+.community-partners {
+  background: var(--sage-soft);
+  border: 1px solid rgba(90,148,104,0.2);
+  border-radius: var(--radius-lg);
+  padding: 40px 44px;
+  margin: 48px 0;
+}
+.community-partners .body-text { max-width: 680px; margin: 14px 0 20px; }
+.partner-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+.partner-benefits li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14px;
+  color: var(--ink-mid);
+  line-height: 1.5;
+}
+.partner-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.beer-sponsors { margin-bottom: 48px; }
+.beer-sponsors .body-text { max-width: 560px; margin-top: 10px; }
+
+.sponsor-pdf-link { display: inline-block; margin-top: 20px; }
+
+@media (max-width: 1080px) {
+  .sponsor-grid-partners { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .sponsor-grid-lg { grid-template-columns: 1fr; max-width: none; }
+  .sponsor-grid-partners { grid-template-columns: 1fr; }
+  .community-partners { padding: 28px 22px; }
+}
