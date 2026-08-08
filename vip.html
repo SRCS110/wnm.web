@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Tickets — Wednesday Night Market</title>
+<meta name="description" content="Lounge seating, front-of-stage access, drinks, and a meet-and-greet with the band.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body data-page="vip">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<site-nav></site-nav>
+
+<main id="main" class="page-body">
+<section id="vip" class="vip-section section-pad">
+  <div class="vip-grid">
+    <div class="vip-left fade-up">
+      <p class="eyebrow">Upgrade Your Night</p>
+      <h2 class="display">The market, unlocked.</h2>
+      <p class="body-text">Skip the lines, sink into a lounge chair, and get front-row access to the stage. Every VIP ticket includes a meet-and-greet and photo op with that night's band.</p>
+
+      <div class="vip-price">
+        <div>
+          <div class="amt">$40</div>
+          <div class="per">per night</div>
+        </div>
+        <div class="season-note" style="margin-left:auto">
+          <div class="s-big">$450</div>
+          <div class="s-small">Season pass · all 14 nights</div>
+        </div>
+      </div>
+
+      <ul class="vip-perks">
+        <li><span class="perk-dot"></span>Lounge seating, front-of-stage</li>
+        <li><span class="perk-dot"></span>2 complimentary drinks included</li>
+        <li><span class="perk-dot"></span>Exclusive VIP dance floor</li>
+        <li><span class="perk-dot"></span>Meet-and-greet + photo op with the band</li>
+        <li><span class="perk-dot"></span>Prime craft beer &amp; wine bar access</li>
+        <li><span class="perk-dot"></span>VIP-only entrance, no general queue</li>
+      </ul>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button type="button" class="btn-amber" id="buy-vip-night">Buy VIP Tickets — $40</button>
+        <button type="button" class="btn-outline" id="buy-vip-season">Season Pass — $450</button>
+      </div>
+    </div>
+
+    <div class="vip-img fade-up">
+      <div class="photo-ph" style="height:100%;background:var(--base-deep);color:var(--ink-soft)">
+        <span class="ico" style="font-size:36px">📸</span>VIP lounge / crowd photo
+      </div>
+      <div class="vip-season-badge">
+        <div class="b-lbl">Season Pass</div>
+        <div class="b-val">All 14 Nights · $450</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<site-footer></site-footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+<script src="config.js"></script>
+<script src="supabase-client.js"></script>
+<script src="payments.js"></script>
+<script src="vip.js"></script>
+</body>
+</html>

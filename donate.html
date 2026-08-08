@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate — Wednesday Night Market</title>
+<meta name="description" content="Help keep the Wednesday Night Market free for every family in Sonoma County.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body data-page="donate">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<site-nav></site-nav>
+
+<main id="main" class="page-body">
+<!-- ══ DONATE ══ -->
+<section id="donate" class="donate-section section-pad">
+  <div class="donate-intro fade-up">
+    <p class="eyebrow">Keep the Market Free</p>
+    <h2 class="display" style="font-size:clamp(38px,5vw,62px);color:var(--ink)">Chip in for the community.</h2>
+    <p class="body-text">The Wednesday Night Market is always free to attend — no ticket required to walk in, listen to the band, or bring the kids. Admission-free only works because people like you help cover the stage, the sound crew, and the security that make it possible. Every donation goes straight back into the market.</p>
+  </div>
+
+  <div class="donate-grid fade-up">
+    <div class="donate-card">
+      <div class="donate-toggle" role="tablist" aria-label="Donation frequency">
+        <button type="button" class="donate-toggle-btn active" role="tab" aria-selected="true" data-frequency="once">One-time</button>
+        <button type="button" class="donate-toggle-btn" role="tab" aria-selected="false" data-frequency="monthly">Monthly</button>
+      </div>
+
+      <div class="donate-amounts" role="group" aria-label="Donation amount">
+        <button type="button" class="donate-amount" data-amount="25">$25</button>
+        <button type="button" class="donate-amount" data-amount="50">$50</button>
+        <button type="button" class="donate-amount active" data-amount="100">$100</button>
+        <button type="button" class="donate-amount" data-amount="250">$250</button>
+        <button type="button" class="donate-amount donate-amount-custom" data-amount="custom">Other</button>
+      </div>
+
+      <div class="donate-custom-row" hidden>
+        <label class="visually-hidden" for="donate-custom-amount">Custom amount in dollars</label>
+        <span class="donate-custom-prefix">$</span>
+        <input id="donate-custom-amount" type="number" min="1" step="1" placeholder="Enter amount" aria-label="Custom amount in dollars">
+      </div>
+
+      <button type="button" id="donate-submit" class="btn-amber donate-submit">Donate $100</button>
+      <p class="donate-note">Securely processed by Square. The Wednesday Night Market is a registered 501(c)(3) non-profit — your donation may be tax-deductible.</p>
+    </div>
+
+    <div class="donate-impact">
+      <div class="donate-impact-item">
+        <div class="donate-impact-amt">$25</div>
+        <div class="donate-impact-desc">Helps cover a Kids Zone activity station for one Wednesday night.</div>
+      </div>
+      <div class="donate-impact-item">
+        <div class="donate-impact-amt">$100</div>
+        <div class="donate-impact-desc">Covers sound crew support for one hour of the evening's live set.</div>
+      </div>
+      <div class="donate-impact-item">
+        <div class="donate-impact-amt">$250</div>
+        <div class="donate-impact-desc">Sponsors a local opening act's stage time for a full market night.</div>
+      </div>
+      <div class="donate-impact-item">
+        <div class="donate-impact-amt">$450</div>
+        <div class="donate-impact-desc">Funds a full night of security and safety staffing for the market.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="coral-stripe fade-up" style="margin-top:64px">
+    <p>Want to support the market in another way? Sponsorship packages are available too.</p>
+    <a href="sponsors.html" class="btn-amber">See sponsorship options →</a>
+  </div>
+</section>
+</main>
+
+<site-footer></site-footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+<script src="config.js"></script>
+<script src="supabase-client.js"></script>
+<script src="payments.js"></script>
+<script src="donate.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Wednesday Night Market</title>
+<meta name="description" content="Photos from the stage, the stalls, and the crowd.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="gallery">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<site-nav></site-nav>
+
+<main id="main" class="page-body">
+<section id="gallery" class="gallery-section section-pad">
+  <p class="eyebrow fade-up">Photo &amp; Video Gallery</p>
+  <h2 class="display fade-up">See you there.</h2>
+
+  <div class="gallery-filters fade-up">
+    <button class="gf-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+    <button class="gf-btn" type="button" data-filter="music" aria-pressed="false">Music &amp; Stage</button>
+    <button class="gf-btn" type="button" data-filter="food" aria-pressed="false">Food &amp; Drink</button>
+    <button class="gf-btn" type="button" data-filter="crafts" aria-pressed="false">Vendors &amp; Crafts</button>
+    <button class="gf-btn" type="button" data-filter="families" aria-pressed="false">Families &amp; Kids</button>
+    <button class="gf-btn" type="button" data-filter="community" aria-pressed="false">Community</button>
+  </div>
+
+  <div class="gallery-grid fade-up">
+    <div class="gi" data-category="music"><div class="gi-img"><div class="photo-ph" style="background:#EAD8B8;color:#7A5820;min-height:360px;height:100%"><span class="ico">📸</span>Stage wide shot</div></div><div class="gi-overlay"><div class="gi-label">Music &amp; Stage</div></div></div>
+    <div class="gi" data-category="crafts"><div class="gi-img"><div class="photo-ph" style="background:#D4E8C8;color:#3A7040;min-height:180px"><span class="ico">📸</span>Vendor stall</div></div><div class="gi-overlay"><div class="gi-label">Vendors &amp; Crafts</div></div></div>
+    <div class="gi" data-category="food"><div class="gi-img"><div class="photo-ph" style="background:#F0D4C0;color:#8A4020;min-height:180px"><span class="ico">📸</span>Food close-up</div></div><div class="gi-overlay"><div class="gi-label">Food &amp; Drink</div></div></div>
+    <div class="gi" data-category="families"><div class="gi-img"><div class="photo-ph" style="background:#C8D8F0;color:#304870;min-height:180px"><span class="ico">📸</span>Kids zone</div></div><div class="gi-overlay"><div class="gi-label">Families &amp; Kids</div></div></div>
+    <div class="gi" data-category="community"><div class="gi-img"><div class="photo-ph" style="background:#E8D0A8;color:#6A4818;min-height:360px;height:100%"><span class="ico">📸</span>Crowd dancing</div></div><div class="gi-overlay"><div class="gi-label">Community</div></div></div>
+    <div class="gi" data-category="food"><div class="gi-img"><div class="photo-ph" style="background:#C8E8D0;color:#2A6040;min-height:180px"><span class="ico">📸</span>Produce stand</div></div><div class="gi-overlay"><div class="gi-label">Food &amp; Drink</div></div></div>
+    <div class="gi" data-category="crafts"><div class="gi-img"><div class="photo-ph" style="background:#E0C8D0;color:#6A3048;min-height:180px"><span class="ico">📸</span>Jewelry display</div></div><div class="gi-overlay"><div class="gi-label">Vendors &amp; Crafts</div></div></div>
+    <div class="gi" data-category="food"><div class="gi-img"><div class="photo-ph" style="background:#F0E0C0;color:#8A5820;min-height:180px"><span class="ico">📸</span>Beer garden</div></div><div class="gi-overlay"><div class="gi-label">Food &amp; Drink</div></div></div>
+  </div>
+
+  <div class="gallery-more fade-up">
+    <button class="btn-outline">Load More Photos</button>
+  </div>
+</section>
+</main>
+
+<site-footer></site-footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

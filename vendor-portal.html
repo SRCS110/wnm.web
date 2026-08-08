@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendor Portal — Wednesday Night Market</title>
+<meta name="description" content="Apply for a booth, pay your vendor fee, and manage your application.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body data-page="vendor-portal">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<site-nav></site-nav>
+
+<main id="main" class="page-body">
+<!-- ══ VENDOR PORTAL ══ -->
+<section id="vendor-portal" class="portal-section section-pad">
+  <div class="portal-intro fade-up">
+    <p class="eyebrow">Vendor Portal</p>
+    <h2 class="display" style="font-size:clamp(38px,5vw,62px);color:var(--ink)">Manage your spot at the market.</h2>
+    <p class="body-text">Apply for a booth, pay your vendor fee, and check your application status — all in one place. Sign in with the Google account you'd like associated with your vendor profile.</p>
+  </div>
+
+  <!-- Signed-out state -->
+  <div class="portal-card fade-up" id="portal-signed-out">
+    <button type="button" id="portal-google-btn" class="btn-primary portal-google-btn">
+      <span class="portal-google-icon" aria-hidden="true">G</span> Continue with Google
+    </button>
+    <p class="portal-signin-note">New here? Signing in creates your vendor account automatically — no separate signup.</p>
+  </div>
+
+  <!-- Signed-in state (hidden until auth connects) -->
+  <div class="portal-card portal-dashboard" id="portal-dashboard" hidden>
+    <div class="portal-dash-head">
+      <div>
+        <div class="portal-dash-name" id="portal-user-name">—</div>
+        <div class="portal-dash-email" id="portal-user-email">—</div>
+      </div>
+      <button type="button" class="btn-outline" id="portal-signout-btn">Sign out</button>
+    </div>
+
+    <div class="portal-tabs" role="tablist" aria-label="Vendor portal sections">
+      <button type="button" class="portal-tab active" role="tab" aria-selected="true" data-tab="application">Application</button>
+      <button type="button" class="portal-tab" role="tab" aria-selected="false" data-tab="payment">Booth Fee</button>
+      <button type="button" class="portal-tab" role="tab" aria-selected="false" data-tab="schedule">Schedule</button>
+      <button type="button" class="portal-tab" role="tab" aria-selected="false" data-tab="documents">Documents</button>
+    </div>
+
+    <!-- Application -->
+    <div class="portal-panel" data-panel="application">
+      <div class="portal-status">
+        <span class="portal-status-dot" id="portal-status-dot"></span>
+        <span id="portal-status-label">No application on file yet</span>
+      </div>
+
+      <form class="contact-form portal-form" id="portal-application-form">
+        <div class="form-row">
+          <input type="text" name="businessName" placeholder="Business / stall name" aria-label="Business or stall name" required>
+          <select name="category" aria-label="Vendor category" required>
+            <option value="" disabled selected>Vendor category</option>
+            <option value="food">Food Vendor</option>
+            <option value="craft">Craft &amp; Art Vendor</option>
+            <option value="farm">Farm &amp; Produce</option>
+            <option value="nonprofit">Non-Profit Booth</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="text" name="contactName" placeholder="Contact name" aria-label="Contact name" required>
+          <input type="tel" name="phone" placeholder="Phone number" aria-label="Phone number" required>
+        </div>
+        <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+        <textarea name="description" placeholder="Tell us what you'll be selling or making" aria-label="Description of goods" required></textarea>
+        <button type="submit" class="btn-amber" style="align-self:flex-start">Submit Application</button>
+      </form>
+    </div>
+
+    <!-- Booth Fee -->
+    <div class="portal-panel" data-panel="payment" hidden>
+      <div class="vip-price" style="margin:0 0 24px">
+        <div>
+          <div class="amt" style="font-size:44px">$35</div>
+          <div class="per">Vendor application fee · non-refundable</div>
+        </div>
+      </div>
+      <p class="body-text" style="margin-bottom:24px">Your booth fee is due once your application is approved. You'll get an email when it's time to pay — or pay in advance below.</p>
+      <button type="button" class="btn-amber" id="portal-pay-btn">Pay Vendor Fee — $35</button>
+    </div>
+
+    <!-- Schedule -->
+    <div class="portal-panel" data-panel="schedule" hidden>
+      <p class="body-text">Your booth night assignment will appear here once the market season lineup is finalized.</p>
+    </div>
+
+    <!-- Documents -->
+    <div class="portal-panel" data-panel="documents" hidden>
+      <p class="body-text">Upload your certificate of insurance, health permit (food vendors), and any other required documents here.</p>
+      <label class="btn-outline portal-upload-btn" for="portal-doc-upload">Choose file to upload</label>
+      <input type="file" id="portal-doc-upload" class="visually-hidden">
+    </div>
+  </div>
+</section>
+</main>
+
+<site-footer></site-footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+<script src="config.js"></script>
+<script src="supabase-client.js"></script>
+<script src="payments.js"></script>
+<script src="portal.js"></script>
+</body>
+</html>
